@@ -26,14 +26,18 @@ function htmlWrapper(){
 }
 
 function checkAndUncheck() {
-  //when check button is submitted add class to change text to strikethrough
+  //when check button is submitted change class to change text to strikethrough
   $('.shopping-list').on('click', '.shopping-item-toggle', function(event) {
-    $(this).closest('li').find('.shopping-item').toggleClass('.shopping-item__checked');
-    // console.log(selectToCheck);
+    $(this).closest('li').find('.shopping-item').toggleClass('shopping-item__checked');
+    console.log("toggle clicked");
   });
-    
-  // or undo strikethrough class change
 }
+
+function deleteItem() {
+    $('.shopping-list').on('click', '.shopping-item-delete', function(event) {
+        $(this).closest('li').remove()
+})};
+
 
 function main () {
 //     //enter items they need by typing and hitting "Return" or clicking "Add Item"
@@ -41,7 +45,7 @@ function main () {
   //     //Check and uncheck items on the list with "Check" button
   checkAndUncheck();
 //     //permanently remove itmes from list
+  deleteItem()
 }
 
 $(main);
-$(checkAndUncheck());
